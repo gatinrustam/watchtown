@@ -1,12 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid rgba(0, 100, 250, 0.5);
+  // border: 1px solid rgba(0, 100, 250, 0.5);
 }
 
 body {
   font-family: 'Gilroy';
-  height: 200vh;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 a {
@@ -102,4 +104,45 @@ li {
   }
 }
 
+%pseudo-block {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url('../images/sale.svg');
+  background-size: contain;
+  width: 23px;
+  height: 23px;
+}
 
+.navigation {
+  display: flex;
+  align-items: center;
+
+  & a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+  }
+
+  & li:first-child {
+    margin-left: 0;
+  }
+
+  & li {
+    margin-left: 15px;
+  }
+
+  &-sale {
+    position: relative;
+    padding-right: 20px;
+
+    &:before {
+      @extend %pseudo-block;
+    }
+  }
+
+  &-sale a {
+    color: #eb4e42;
+  }
+}
