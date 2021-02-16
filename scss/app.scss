@@ -4,6 +4,20 @@
   // border: 1px solid rgba(0, 100, 250, 0.5);
 }
 
+$blue: #0096d0;
+
+%sale-icon {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  // background-image: url('../images/sale.svg');
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+}
+
 body {
   font-family: 'Gilroy';
   font-size: 16px;
@@ -13,6 +27,10 @@ body {
 
 a {
   text-decoration: none;
+  color: $blue;
+}
+a:hover {
+  color: $blue;
 }
 
 li {
@@ -36,6 +54,16 @@ li {
 .header {
   width: 100%;
 
+  &__notify {
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    line-height: 1.2em;
+    text-align: center;
+    background: #232323;
+    color: #fff;
+    padding: 16px 0;
+  }
+
   &__top { 
     padding: 12px 0;
 
@@ -43,10 +71,6 @@ li {
       font-weight: 600;
       font-style: normal;
     }
-
-    // &-callback {
-      
-    // }
   }
 
   &__bottom {
@@ -54,7 +78,6 @@ li {
   }
 
   &-logo {
-    color: red;
     max-width: 200px;
     width: 100%;
       
@@ -73,12 +96,12 @@ li {
 
 
     &:hover {
-      color: #0096d0;
+      color: $blue;
     }
   }
 
   &-button {
-    background: #0096d0;
+    background: $blue;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
@@ -103,16 +126,7 @@ li {
   }
 }
 
-%pseudo-block {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  // background-image: url('../images/sale.svg');
-  background-size: contain;
-  width: 23px;
-  height: 23px;
-}
+
 
 .navigation {
   display: flex;
@@ -129,19 +143,28 @@ li {
   }
 
   & li {
-    margin-left: 15px;
+    margin-left: 22px;
   }
 
   &-sale {
     position: relative;
-    padding-right: 20px;
+    padding-right: 30px;
 
     &:before {
-      @extend %pseudo-block;
+      @extend %sale-icon;
     }
   }
 
   &-sale a {
     color: #eb4e42;
+  }
+}
+
+.control {
+  font-size: 16px;
+  font-weight: 500;
+
+  &__login {
+    color: $blue;
   }
 }
